@@ -68,7 +68,7 @@ export default function Home() {
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none font-headline uppercase leading-loose">
+                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none font-headline uppercase leading-[48px]">
                     Xây Dựng Tương Lai Tài Chính Vững Vàng Cho Sinh Viên
                   </h1>
                   <p className="max-w-[600px] text-muted-foreground md:text-xl">
@@ -85,12 +85,11 @@ export default function Home() {
                 </div>
               </div>
               <Image
-                src="https://placehold.co/600x400.png"
-                width="600"
-                height="400"
-                alt="Hero"
-                data-ai-hint="students studying finance"
-                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last"
+                src="https://i.ibb.co/mVzjJTJ7/Edu-Trust-Graphics-1.png"
+                width={632}
+                height={564}
+                alt="EduTrust Graphics"
+                className="mx-auto rounded-xl object-cover w-full h-full lg:order-last"
               />
             </div>
           </div>

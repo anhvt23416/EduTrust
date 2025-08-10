@@ -16,18 +16,16 @@ import {
 } from "@/components/ui/sidebar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
-  GraduationCap,
-  LayoutDashboard,
   Handshake,
-  Lightbulb,
+  LayoutDashboard,
   Building,
-  Pencil,
   LogOut,
-  Heart
+  Heart,
+  Search
 } from "lucide-react";
 import { Button } from "./ui/button";
 
-export function AppSidebar() {
+export function SponsorSidebar() {
   const pathname = usePathname();
 
   const isActive = (path: string) => {
@@ -38,10 +36,10 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarHeader>
         <div className="flex items-center gap-2">
-          <GraduationCap className="w-8 h-8 text-primary" />
+          <Heart className="w-8 h-8 text-primary" />
           <div className="flex flex-col">
             <h2 className="text-lg font-semibold font-headline">EduTrust</h2>
-            <p className="text-xs text-muted-foreground">Xin chào, Sinh viên!</p>
+            <p className="text-xs text-muted-foreground">Chào mừng, Nhà tài trợ!</p>
           </div>
         </div>
       </SidebarHeader>
@@ -51,11 +49,11 @@ export function AppSidebar() {
             <SidebarMenu>
                 <SidebarMenuItem>
                     <SidebarMenuButton
-                        href="/student/dashboard"
+                        href="/sponsor/dashboard"
                         asChild
-                        isActive={isActive('/student/dashboard')}
+                        isActive={isActive('/sponsor/dashboard')}
                     >
-                        <Link href="/student/dashboard">
+                        <Link href="/sponsor/dashboard">
                             <LayoutDashboard />
                             <span>Bảng điều khiển</span>
                         </Link>
@@ -63,42 +61,30 @@ export function AppSidebar() {
                 </SidebarMenuItem>
                 <SidebarMenuItem>
                     <SidebarMenuButton 
-                        href="/student/assessment"
+                        href="/sponsor/search"
                         asChild
-                        isActive={isActive('/student/assessment')}
+                        isActive={isActive('/sponsor/search')}
                     >
-                        <Link href="/student/assessment">
-                            <Pencil />
-                            <span>Đánh giá EduTrust</span>
-                        </Link>
-                    </SidebarMenuButton>
-                </SidebarMenuItem>
-                <SidebarMenuItem>
-                    <SidebarMenuButton 
-                        href="/student/resources"
-                        asChild
-                        isActive={isActive('/student/resources')}
-                    >
-                        <Link href="/student/resources">
-                            <Lightbulb />
-                            <span>Tài nguyên học tập</span>
+                        <Link href="/sponsor/search">
+                            <Search />
+                            <span>Tìm kiếm Sinh viên</span>
                         </Link>
                     </SidebarMenuButton>
                 </SidebarMenuItem>
             </SidebarMenu>
         </SidebarGroup>
-        <SidebarGroup>
-            <SidebarGroupLabel>Dành cho Đối tác</SidebarGroupLabel>
+         <SidebarGroup>
+            <SidebarGroupLabel>Chuyển đổi vai trò</SidebarGroupLabel>
             <SidebarMenu>
-                <SidebarMenuItem>
-                    <SidebarMenuButton
-                        href="/sponsor/dashboard"
+                 <SidebarMenuItem>
+                    <SidebarMenuButton 
+                        href="/student/dashboard"
                         asChild
-                        isActive={isActive('/sponsor/dashboard')}
+                        isActive={isActive('/student')}
                     >
-                        <Link href="/sponsor/dashboard">
-                            <Heart />
-                            <span>Nhà tài trợ</span>
+                        <Link href="/student/dashboard">
+                            <Handshake />
+                            <span>Dành cho Sinh viên</span>
                         </Link>
                     </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -110,7 +96,7 @@ export function AppSidebar() {
                     >
                         <Link href="/university">
                             <Building />
-                            <span>Trường Đại học</span>
+                            <span>Dành cho Trường học</span>
                         </Link>
                     </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -120,12 +106,12 @@ export function AppSidebar() {
       <SidebarFooter>
         <div className="flex items-center gap-2">
             <Avatar>
-                <AvatarImage src="https://placehold.co/100x100.png" alt="User" data-ai-hint="student avatar"/>
-                <AvatarFallback>SV</AvatarFallback>
+                <AvatarImage src="https://placehold.co/100x100.png" alt="Sponsor" data-ai-hint="company logo"/>
+                <AvatarFallback>NTT</AvatarFallback>
             </Avatar>
             <div className="flex-1">
-                <p className="text-sm font-semibold">Nguyễn Văn A</p>
-                <p className="text-xs text-muted-foreground">sinhvien@email.com</p>
+                <p className="text-sm font-semibold">Công ty ABC</p>
+                <p className="text-xs text-muted-foreground">sponsor@email.com</p>
             </div>
             <Button variant="ghost" size="icon" asChild>
                 <Link href="/">

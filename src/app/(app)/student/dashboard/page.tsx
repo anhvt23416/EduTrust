@@ -2,11 +2,13 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, GraduationCap, Handshake, Pencil, Sparkles, TrendingUp } from "lucide-react";
-import Image from 'next/image';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogDescription } from "@/components/ui/dialog";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function StudentDashboard() {
     return (
         <div className="flex flex-col gap-8">
+            {/* Page Title and Description */}
             <div>
                 <h1 className="text-3xl font-bold font-headline">Bảng điều khiển Sinh viên</h1>
                 <p className="text-muted-foreground">Chào mừng trở lại! Đây là tổng quan về hồ sơ EduTrust của bạn.</p>
@@ -14,6 +16,7 @@ export default function StudentDashboard() {
 
             <div className="grid md:grid-cols-3 gap-6">
                 <Card className="md:col-span-2 bg-primary text-primary-foreground shadow-lg">
+                    {/* EduScore Card */}
                     <CardHeader>
                         <CardTitle className="flex items-center gap-2 text-primary-foreground/90"><Sparkles /> EduScore của bạn</CardTitle>
                     </CardHeader>
@@ -30,6 +33,7 @@ export default function StudentDashboard() {
                     </CardContent>
                 </Card>
                 <Card className="flex flex-col justify-center items-center text-center">
+                    {/* Opportunities Card */}
                     <CardHeader>
                         <CardTitle>Cơ hội đang chờ</CardTitle>
                         <CardDescription>Dựa trên điểm số của bạn</CardDescription>
@@ -42,7 +46,8 @@ export default function StudentDashboard() {
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                 <Card className="hover:shadow-md transition-shadow">
+                {/* Profile Assessment Card */}
+                <Card className="hover:shadow-md transition-shadow">
                     <CardHeader>
                         <CardTitle className="flex items-center gap-2"><Pencil className="text-accent"/> Đánh giá hồ sơ</CardTitle>
                     </CardHeader>
@@ -53,6 +58,7 @@ export default function StudentDashboard() {
                         </Button>
                     </CardContent>
                 </Card>
+                {/* Score Improvement Card */}
                 <Card className="hover:shadow-md transition-shadow">
                     <CardHeader>
                         <CardTitle className="flex items-center gap-2"><TrendingUp className="text-accent"/> Cải thiện điểm số</CardTitle>
@@ -64,7 +70,8 @@ export default function StudentDashboard() {
                         </Button>
                     </CardContent>
                 </Card>
-                 <Card className="hover:shadow-md transition-shadow">
+                {/* Find Sponsor Card */}
+                <Card className="hover:shadow-md transition-shadow">
                     <CardHeader>
                         <CardTitle className="flex items-center gap-2"><Handshake className="text-accent"/> Tìm nhà tài trợ</CardTitle>
                     </CardHeader>
@@ -77,6 +84,7 @@ export default function StudentDashboard() {
                 </Card>
             </div>
 
+            {/* Featured Scholarships Card */}
             <Card>
                 <CardHeader>
                     <CardTitle>Học bổng nổi bật</CardTitle>
@@ -85,6 +93,7 @@ export default function StudentDashboard() {
                 <CardContent>
                     <div className="space-y-4">
                         <div className="flex items-center justify-between p-3 rounded-lg hover:bg-muted">
+                            {/* Scholarship 1 */}
                             <div className="flex items-center gap-4">
                                 <div className="p-3 bg-secondary rounded-full">
                                     <GraduationCap className="w-6 h-6 text-secondary-foreground"/>
@@ -96,7 +105,8 @@ export default function StudentDashboard() {
                             </div>
                             <Button variant="outline" size="sm">Xem chi tiết</Button>
                         </div>
-                        <div className="flex items-center justify-between p-3 rounded-lg hover:bg-muted">
+                        <div className="flex items-center justify-between p-3 rounded-lg hover:bg-muted"> 
+                           {/* Scholarship 2 */}
                            <div className="flex items-center gap-4">
                                 <div className="p-3 bg-secondary rounded-full">
                                     <GraduationCap className="w-6 h-6 text-secondary-foreground"/>
@@ -111,6 +121,22 @@ export default function StudentDashboard() {
                     </div>
                 </CardContent>
             </Card>
+
+            {/* AI Chatbot Button */}
+            <div className="fixed bottom-8 right-8 z-50">
+                <Dialog>
+                    <DialogTrigger asChild>
+                        <Button size="lg" className="rounded-full shadow-lg">AI Assistant</Button>
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-[425px]">
+                        <DialogHeader>
+                            <DialogTitle>AI Chatbot</DialogTitle>
+                            <DialogDescription>Chat with the AI assistant to get help with your EduTrust profile.</DialogDescription>
+                        </DialogHeader>
+                       <Textarea className="h-64" placeholder="Type your message here..."/>
+                    </DialogContent>
+                </Dialog>
+            </div>
 
         </div>
     );
