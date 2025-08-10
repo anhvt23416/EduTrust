@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 export default function StudentDashboard() {
     return (
-        <div className="flex flex-col gap-8">
+        <div className="flex-1 flex flex-col gap-8">
             {/* Page Title and Description */}
             <div>
                 <h1 className="text-3xl font-bold font-headline">Bảng điều khiển Sinh viên</h1>
