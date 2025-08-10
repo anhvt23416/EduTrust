@@ -19,7 +19,7 @@ export default function StudentDashboard() {
                     </CardHeader>
                     <CardContent className="flex items-center justify-between">
                         <div>
-                            <p className="text-6xl font-bold">Đang cập nhật</p>
+                            <p className="text-6xl font-bold mb-2">Đang cập nhật</p>
                             <p className="text-primary-foreground/80">Xếp loại: ...</p>
                         </div>
                         <Button variant="secondary" asChild>
