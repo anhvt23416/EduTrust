@@ -5,8 +5,6 @@ import { ArrowRight, GraduationCap, Handshake, Pencil, Sparkles, TrendingUp } fr
 import Image from 'next/image';
 
 export default function StudentDashboard() {
-    const eduScore = 78; // Mock data
-
     return (
         <div className="flex flex-col gap-8">
             <div>
@@ -17,12 +15,12 @@ export default function StudentDashboard() {
             <div className="grid md:grid-cols-3 gap-6">
                 <Card className="md:col-span-2 bg-primary text-primary-foreground shadow-lg">
                     <CardHeader>
-                        <CardTitle className="flex items-center gap-2 text-primary-foreground/90"><Sparkles /> Điểm EduTrust của bạn</CardTitle>
+                        <CardTitle className="flex items-center gap-2 text-primary-foreground/90"><Sparkles /> EduScore của bạn</CardTitle>
                     </CardHeader>
                     <CardContent className="flex items-center justify-between">
                         <div>
-                            <p className="text-6xl font-bold">{eduScore}</p>
-                            <p className="text-primary-foreground/80">Điểm số Tốt</p>
+                            <p className="text-6xl font-bold">Đang cập nhật</p>
+                            <p className="text-primary-foreground/80">Xếp loại: ...</p>
                         </div>
                         <Button variant="secondary" asChild>
                             <Link href="/student/assessment">
